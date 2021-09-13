@@ -1,0 +1,18 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.checkbox input:hover {
+  cursor: pointer;
+}
+
+.checkbox span {
+  color: #555;
+}
