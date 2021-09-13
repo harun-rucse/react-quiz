@@ -5,7 +5,12 @@ import classes from '../styles/Video.module.css';
 export default function Video({ video }) {
   return (
     <Link
-      to={`/quiz/${video.youtubeID}`}
+      to={{
+        pathname: `/quiz/${video.youtubeID}`,
+        state: {
+          videoTitle: video.title,
+        },
+      }}
       className={`${video.noq === 0 && 'disabled-link'}`}
     >
       <div className={classes.video}>

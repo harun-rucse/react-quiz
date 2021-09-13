@@ -33,6 +33,9 @@ const reducer = (state, action) => {
 export default function Quiz() {
   const history = useHistory();
   const { id } = useParams();
+  const { location } = history;
+  const { state } = location;
+  const { videoTitle } = state;
   const { currentUser } = useAuth();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const { loading, questions, error } = useQuestions(id);
@@ -108,7 +111,7 @@ export default function Quiz() {
             submit={handleSubmit}
             progress={percentage}
           />
-          <MiniPlayer id={id} title={qna[currentQuestion].title} />
+          <MiniPlayer id={id} title={videoTitle} />
         </>
       )}
     </>
